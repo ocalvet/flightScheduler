@@ -25,11 +25,23 @@ gulp.task('tmp', function() {
   gulp.src('index.html')
     .pipe(gulp.dest('.tmp/index.html'))
     .pipe(connect.reload());
-})
+});
  
+gulp.task('app-js', function() {
+  gulp.src('app/*.js')
+    .pipe(gulp.dest('.tmp/app'))
+    .pipe(connect.reload());
+});
+
 gulp.task('watch', function() {
     gulp.watch('styles/*.less', ['less']);
     gulp.watch('index.html', ['tmp']);
-})
+    gulp.watch('app/*.js', ['app-js']);
+});
+
+gulp.task('copy-libs', function() {
+  gulp.src('node_modules/angular/angular.js')
+    .pipe(gulp.dest('.tmp/lib'));
+});
  
-gulp.task('default', ['less', 'tmp', 'webserver', 'watch']);
+gulp.task('default', ['less', 'tmp', 'app-js', 'copy-libs', 'webserver', 'watch']);
