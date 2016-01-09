@@ -13,5 +13,8 @@
     "travel"
   ],
   "author": "Ovidio R. Calvet",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
