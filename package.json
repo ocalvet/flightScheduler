@@ -1,0 +1,17 @@
+{
+  "name": "flight-scheduler",
+  "version": "1.0.0",
+  "description": "A flight and travel scheduler to facilitate vacations",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "flight",
+    "scheduler",
+    "vacation",
+    "travel"
+  ],
+  "author": "Ovidio R. Calvet",
+  "license": "ISC"
+}
