@@ -15,6 +15,7 @@
   "author": "Ovidio R. Calvet",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1"
   }
 }
