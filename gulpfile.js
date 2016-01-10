@@ -8,7 +8,6 @@ gulp.task('webserver', function() {
   connect.server({
     port: serverPort,
     root: '.tmp',
-    fallback: 'index.html',
     livereload: true
   });
   console.log('Webserver started on port: ' + serverPort);
@@ -23,12 +22,12 @@ gulp.task('less', function() {
 
 gulp.task('tmp', function() {
   gulp.src('index.html')
-    .pipe(gulp.dest('.tmp/index.html'))
+    .pipe(gulp.dest('.tmp'))
     .pipe(connect.reload());
 });
  
 gulp.task('app-js', function() {
-  gulp.src('app/*.js')
+  gulp.src('app/**/*.js')
     .pipe(gulp.dest('.tmp/app'))
     .pipe(connect.reload());
 });
@@ -40,8 +39,18 @@ gulp.task('watch', function() {
 });
 
 gulp.task('copy-libs', function() {
-  gulp.src('node_modules/angular/angular.js')
+  gulp.src([
+      'node_modules/angular/angular.js',
+      'node_modules/angular-ui-router/release/angular-ui-router.js'
+    ])
     .pipe(gulp.dest('.tmp/lib'));
 });
+
+gulp.task('copy-partials', function() {
+  gulp.src([
+      'app/views/**/*'
+    ])
+    .pipe(gulp.dest('.tmp/views'));
+});
  
-gulp.task('default', ['less', 'tmp', 'app-js', 'copy-libs', 'webserver', 'watch']);
+gulp.task('default', ['less', 'tmp', 'app-js', 'copy-libs', 'copy-partials', 'webserver', 'watch']);
