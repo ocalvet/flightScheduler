@@ -11,10 +11,10 @@
 <body ng-app="flightScheduler" ng-controller="AppCtrl as app">
   <div class="side-menu-bar">
     <ul>
-      <li><a ui-sref="home">Home</a></li>
-      <li><a ui-sref="cuba">Cuba</a></li>
-      <li><a class="not-available">Hawaii</a></li>
-      <li><a class="not-available">Europe</a></li>
+      <li ng-click="app.navigate('home')"><span>Home</span></li>
+      <li ng-click="app.navigate('cuba')"><span>Cuba</span></li>
+      <li><span class="not-available">Hawaii</span></li>
+      <li><span class="not-available">Europe</span></li>
     </ul>
   </div>
   <div class="content-area">

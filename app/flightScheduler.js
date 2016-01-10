@@ -1,9 +1,13 @@
 (function(module) {
   
   module('flightScheduler', ['ui.router'])
-    .controller('AppCtrl', [function() {
+    .controller('AppCtrl', ['$state', function($state) {
       var appCtrl = this;
-      appCtrl.title = "Hello from angular";
+      
+      // navigate to the different states
+      appCtrl.navigate = function(state) {
+        $state.go(state);
+      }
     }])
     .config(function($stateProvider, $urlRouterProvider) {
       
