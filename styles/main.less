@@ -5,7 +5,7 @@
 html,body { 
   height: 100%;
   font-family: 'Kanit', sans-serif;
-  color: #e8e2d6; 
+  color: @primary-color; 
 }
 
 body {
@@ -14,14 +14,17 @@ body {
 
 h1 {
   font-size: @default-font-size * 3;
+  font-weight: normal;
 }
 
 h3 {
   font-size: @default-font-size * 2;
+  font-weight: normal;
 }
 
 h4 {
   font-size: @default-font-size * 1.1;
+  font-weight: normal;
 }
 
 .side-menu-bar {
@@ -33,8 +36,9 @@ h4 {
 }
 
 .side-menu-bar ul {
+  width: 100%;
   top: 50%;
-  position: relative;
+  position: absolute;
   margin-top: -100%;
 }
 
@@ -45,13 +49,15 @@ h4 {
   font-weight: bolder;
   text-align: center;
   -webkit-text-stroke-width: 2px; 
-  -webkit-text-stroke-color: #6d5e51; 
+  // -webkit-text-stroke-color: #6d5e51; 
+  -webkit-text-stroke-color: darken(@primary-color, 50%); 
 }
 
 .side-menu-bar ul li:hover {
-  background-color: #e5dbcc;
+  background-color: @primary-color;
   border-radius: 25px;
-  color: #8c7f70;
+  // color: #8c7f70;
+  color: darken(@primary-color, 20%);
   opacity: 0.9;
   transition: background 300ms ease;
 }
@@ -62,8 +68,76 @@ h4 {
   min-width: 800px - 21px;
   padding: 5px 10px;
   height: 100%;
+  position: relative;
 }
 
 .content-area:after {
   float: clear;
 }
+
+.view-holder {
+  top: 50%;
+  margin-top: -150px;
+  height: 300px;
+  position: absolute;
+}
+
+/* trip card styles */
+.trip-card {
+  display: inline-block;
+  width: 250px;
+  height: 300px;
+  padding: 10px;
+  border: 2px darken(@primary-color, 50%) solid;
+  background: darken(@primary-color, 60%);
+  border-radius: 10px;
+  opacity: .95;
+  margin-right: 30px;
+  position: relative;
+}
+
+.trip-card h4 {
+  font-size: 1.5em;
+  border-bottom: 2px solid;
+}
+
+.trip-card p {
+  margin-top: 10px;
+  text-indent: 10px;
+}
+
+.trip-card table {
+  margin-top: 20px;
+}
+
+.trip-card table td {
+  padding: 5px;
+}
+
+.trip-card-actions {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.trip-card-actions button {
+  height: 35px;
+  width: 80px;
+  border: none;
+  background: @primary-color;
+  color: darken(@primary-color, 50%);
+  font-size: 1em;
+  cursor: pointer;
+}
+// .view-holder {
+//   position: absolute;
+//   padding: 10px 20px;
+//   bottom: 100px;
+//   right: 150px;
+//   height: 450px;
+//   width: 600px;
+//   border: 2px #6d5e51 solid;
+//   background: #8c7f70;
+//   border-radius: 40px;
+//   opacity: .95;
+// }
