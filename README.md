@@ -4,7 +4,7 @@
 * node and npm
 * gulp (`npm install -g gulp`)
 
-### To install run the following commands
+### To run follow these commands
 ```
 $ npm install
 $ gulp
