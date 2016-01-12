@@ -21,12 +21,6 @@
           days: 15,
           spacesOccupied: 13,
           totalSpaces: 25
-      },{
-          title: 'Micileni\'s Trip',
-          description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
-          days: 5,
-          spacesOccupied: 0,
-          totalSpaces: 10
       }];
     }]);
 })(angular.module);
