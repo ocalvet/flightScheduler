@@ -1,1 +1,10 @@
-<h1>{{ createTripCtrl.title }}</h1>
+<div class="card form-step">
+  <h1>{{ createTripCtrl.title }}</h1>
+  <form novalidate>
+    <label>Trip Name</label>
+    <div class="centered">
+      <input type="text" ng-model="createTripCtrl.trip.tripName"/>
+    </div>
+    
+  </form>
+</div>
