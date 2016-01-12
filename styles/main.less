@@ -9,7 +9,7 @@ html,body {
 }
 
 body {
-  background: url('../images/habana_vieja.jpg') 100%;
+  background: url('../images/habana_vieja_bg.jpg') 100%;
 }
 
 h1 {
@@ -40,24 +40,24 @@ h4 {
   top: 50%;
   position: absolute;
   margin-top: -100%;
+  background: fade(black, 40%);
 }
 
 .side-menu-bar ul li {
   line-height: @default-font-size * 2;
   font-size: @default-font-size * 3;
   cursor: pointer;
-  font-weight: bolder;
+  font-weight: normal;
   text-align: center;
-  -webkit-text-stroke-width: 2px; 
+  color: darken(@primary-color, 20%)
+  // -webkit-text-stroke-width: 2px; 
   // -webkit-text-stroke-color: #6d5e51; 
-  -webkit-text-stroke-color: darken(@primary-color, 50%); 
+  // -webkit-text-stroke-color: darken(@primary-color, 50%); 
 }
 
-.side-menu-bar ul li:hover {
-  background-color: @primary-color;
-  border-radius: 25px;
-  // color: #8c7f70;
-  color: darken(@primary-color, 20%);
+.side-menu-bar ul li:hover, .side-menu-bar ul li.active {
+  background-color: darken(@primary-color,20%);
+  color: darken(@primary-color, 70%);
   opacity: 0.9;
   transition: background 300ms ease;
 }
@@ -88,10 +88,10 @@ h4 {
   width: 250px;
   height: 300px;
   padding: 10px;
-  border: 2px darken(@primary-color, 50%) solid;
-  background: darken(@primary-color, 60%);
+  color: darken(@primary-color, 90%);
+  //border: 2px darken(@primary-color, 50%) solid;
+  background: fade(darken(@primary-color, 40%), 80%);
   border-radius: 10px;
-  opacity: .75;
   margin-right: 30px;
   position: relative;
 }
@@ -121,14 +121,17 @@ h4 {
 }
 
 .trip-card-actions button {
-  height: 35px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   border: none;
+  border-radius: 40px;
   background: @primary-color;
-  color: darken(@primary-color, 50%);
+  color: darken(@primary-color, 90%);
   font-size: 1em;
   cursor: pointer;
 }
+
+
 // .view-holder {
 //   position: absolute;
 //   padding: 10px 20px;

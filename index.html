@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Flight Scheduler</title>
-  <link href='https://fonts.googleapis.com/css?family=Kanit:400,900,400italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kanit:200,400,900,200italic,400italic,900italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <!-- Load libraries -->
   <script type="text/javascript" src="lib/angular.js"></script>
@@ -12,8 +12,8 @@
 <body ng-app="flightScheduler" ng-controller="AppCtrl as app">
   <div class="side-menu-bar">
     <ul>
-      <li ng-click="app.navigate('home')"><span>Home</span></li>
-      <li ng-click="app.navigate('cuba')"><span>Cuba</span></li>
+      <li ui-sref-active="active" ui-sref="home" ng-click="app.navigate('home')"><span>Home</span></li>
+      <li ui-sref-active="active" ui-sref="cuba" ng-click="app.navigate('cuba')"><span>Cuba</span></li>
       <li><span class="not-available">Hawaii</span></li>
       <li><span class="not-available">Europe</span></li>
     </ul>
