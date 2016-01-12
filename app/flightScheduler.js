@@ -6,6 +6,7 @@
       
       // navigate to the different states
       appCtrl.navigate = function(state) {
+        console.log('Navigating to ' + state);
         $state.go(state);
       }
     }])
@@ -25,6 +26,11 @@
           url: '/cuba',
           templateUrl: 'views/cuba/cuba.html',
           controller: 'CubaCtrl as cubaCtrl'
+        })
+        .state('create-trip', {
+          url: '/create-trip',
+          templateUrl: 'views/tripCreation/create.html',
+          controller: 'CreateTripCtrl as createTripCtrl'
         });
     });
   

@@ -1,4 +1,4 @@
-<div class="trip-card" ng-repeat="card in homeCtrl.cards">
+<div class="card info-trip-card" ng-repeat="card in homeCtrl.cards">
   <h4>{{ card.title }}</h4>
   <p>{{ card.description }}</p>
   <table>
@@ -15,6 +15,6 @@
     <button ng-click="homeCtrl.signForTrip(card.tripId)">Sign Up</button>
   </div>
 </div>
-<div class="create-trip-card">
+<div class="card create-trip-card" ng-click="homeCtrl.navigate('create-trip')">
   <h4>+</h4>
 </div>

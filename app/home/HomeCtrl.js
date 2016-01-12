@@ -1,26 +1,18 @@
 (function(module) {
   module('flightScheduler')
-    .controller('HomeCtrl', [function() {
+    .controller('HomeCtrl', ['$state', 'tripService', function($state, tripService) {
       var homeCtrl = this;
+
       homeCtrl.title = "Home View";
-      homeCtrl.cards = [{
-          title: 'Schilling\'s Trip',
-          description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
-          days: 12,
-          spacesOccupied: 5,
-          totalSpaces: 20
-      },{
-          title: 'Tyson\'s Trip',
-          description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
-          days: 10,
-          spacesOccupied: 20,
-          totalSpaces: 20
-      },{
-          title: 'Lenny\'s Trip',
-          description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
-          days: 15,
-          spacesOccupied: 13,
-          totalSpaces: 25
-      }];
+
+      homeCtrl.navigate = function(state) {
+        $state.go(state);
+      };
+      tripService.getUpcomingTrips()
+        .then(function(trips) {
+          homeCtrl.cards = trips;          
+        }, function (err) {
+          console.log('There was an error getting the upcoming trips', err);
+        });           
     }]);
 })(angular.module);
