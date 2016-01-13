@@ -17,6 +17,8 @@
       </a>
     </div>
     <nav>
+      <a ui-sref="create-trip">Create Trip</a>
+      <span class="separator">|</span>
       <a ui-sref="about-us">About Us</a>
       <span class="separator">|</span>
       <a ui-sref="about-us">Trip Tips</a>
@@ -26,15 +28,14 @@
     <div class="clearfix"></div>
   </header>
   <div class="container">
-    <h1>Start Your Dream Celebrety Vacation</h1>
-    <div class="view-holder" ui-view></div>    
+    <div class="slogon-view" ui-view="slogon-view"></div> 
+    <div class="view-holder" ui-view="main-view"></div>   
   </div>
   
   <!-- Load application files -->
   <script type="text/javascript" src="app/flightScheduler.js"></script>
   <script type="text/javascript" src="app/common/tripService.js"></script>
   <script type="text/javascript" src="app/home/HomeCtrl.js"></script>
-  <script type="text/javascript" src="app/cuba/home/CubaCtrl.js"></script>
   <script type="text/javascript" src="app/tripCreation/CreateTripCtrl.js"></script>
 </body>
 </html>

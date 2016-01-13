@@ -19,17 +19,17 @@
       $stateProvider
         .state('home', {
           url: '/home',
-          templateUrl: 'views/home/home.html',
+          views: {
+            'slogon-view': { template: '<h1>Start Your Dream Celebrity Vacation</h1>' },
+            'main-view': { templateUrl: 'views/home/home.html' }
+          },
           controller: 'HomeCtrl as homeCtrl'
-        })
-        .state('cuba', {
-          url: '/cuba',
-          templateUrl: 'views/cuba/cuba.html',
-          controller: 'CubaCtrl as cubaCtrl'
         })
         .state('create-trip', {
           url: '/create-trip',
-          templateUrl: 'views/tripCreation/create.html',
+          views: {
+            'main-view': { templateUrl: 'views/tripCreation/create.html' }
+          },
           controller: 'CreateTripCtrl as createTripCtrl'
         });
     });
