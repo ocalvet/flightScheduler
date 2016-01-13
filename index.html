@@ -10,17 +10,26 @@
   <script type="text/javascript" src="lib/angular-ui-router.js"></script>
 </head>
 <body ng-app="flightScheduler" ng-controller="AppCtrl as app">
-  <div class="side-menu-bar">
-    <ul>
-      <li ui-sref-active="active" ui-sref="home" ng-click="app.navigate('home')"><span>Home</span></li>
-      <li ui-sref-active="active" ui-sref="cuba" ng-click="app.navigate('cuba')"><span>Cuba</span></li>
-      <li class="not-available"><span>Hawaii</span></li>
-      <li class="not-available"><span>Europe</span></li>
-    </ul>
+  <header>
+    <div class="logo">
+      <a ui-sref="home">
+        <img src="imaged/logo.jpg"/>
+      </a>
+    </div>
+    <nav>
+      <a ui-sref="about-us">About Us</a>
+      <span class="separator">|</span>
+      <a ui-sref="about-us">Trip Tips</a>
+      <span class="separator">|</span>
+      <a ui-sref="about-us">Sign In</a>
+    </nav>
+    <div class="clearfix"></div>
+  </header>
+  <div class="container">
+    <h1>Start Your Dream Celebrety Vacation</h1>
+    <div class="view-holder" ui-view></div>    
   </div>
-  <div class="content-area">
-    <div class="view-holder" ui-view></div>
-  </div>
+  
   <!-- Load application files -->
   <script type="text/javascript" src="app/flightScheduler.js"></script>
   <script type="text/javascript" src="app/common/tripService.js"></script>

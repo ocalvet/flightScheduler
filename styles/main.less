@@ -1,6 +1,7 @@
 @import "reset";
 @import "variables";
 
+///////////////////// Common /////////////////////
 /* Set full screen */
 html,body { 
   height: 100%;
@@ -9,88 +10,99 @@ html,body {
 }
 
 body {
-  background: url('../images/habana_vieja_bg.jpg') 100%;
+  background: url('../images/bg_beach.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-h1 {
-  font-size: @default-font-size * 3;
-  font-weight: normal;
+.clearfix {
+  display: block; clear: both;
 }
 
-h3 {
-  font-size: @default-font-size * 2;
-  font-weight: normal;
-}
-
-h4 {
-  font-size: @default-font-size * 1.1;
-  font-weight: normal;
-}
-
-.side-menu-bar {
-  float: left;
-  width: 15%;
-  min-width: 200px;
-  height: 100%;
-  position: relative;
-}
-
-.side-menu-bar ul {
-  width: 100%;
-  top: 50%;
-  position: absolute;
-  margin-top: -100%;
-  background: fade(black, 40%);
-}
-
-.side-menu-bar ul li {
-  line-height: @default-font-size * 2;
-  font-size: @default-font-size * 3;
+a {
   cursor: pointer;
+}
+
+///////////////////// Header /////////////////////
+.logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin-top: 25px;
+  margin-left: 15px;
+  background: red;
+  transform: rotate(-10deg);
+}
+
+nav {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+
+///////////////////// Container /////////////////////
+.container {
+  width: 100%;
+  // background:fade(black, 50%); 
+}
+
+.container h1 {
+  font-size: @default-font-size * 4;
+  padding: 35px 0;
   font-weight: normal;
   text-align: center;
-  color: darken(@primary-color, 20%)
-  // -webkit-text-stroke-width: 2px; 
-  // -webkit-text-stroke-color: #6d5e51; 
-  // -webkit-text-stroke-color: darken(@primary-color, 50%); 
+  text-shadow: 4px 4px 6px #777;
 }
 
-.side-menu-bar ul li:hover, .side-menu-bar ul li.active {
-  background-color: darken(@primary-color,20%);
-  color: darken(@primary-color, 70%);
-  opacity: 0.9;
-  transition: background 300ms ease;
+///////////////////// Upcoming Trips /////////////////////
+.upcoming-trips-header {
+  margin-left: 10px;
+  margin-top: 110px;
 }
-
-.side-menu-bar ul li.not-available {
-  cursor: not-allowed;
-}
-
-.content-area {
+.upcoming-trips-header h4{
+  font-size: @default-font-size * 2.5;
   float: left;
-  width: 83%; 
-  min-width: 800px - 21px;
-  padding: 5px 10px;
-  height: 100%;
-  position: relative;
+  font-weight: normal;
+  color: @primary-color;
+  text-shadow: 4px 4px 6px #777;
+  
 }
 
-.content-area:after {
-  float: clear;
+///////////////////// Filter Control /////////////////////
+.filter-control {
+  float: left;
+  margin-left: 30px;
+  height: 60px;
+  padding: 5px 15px;
+  border: 1px solid black;
 }
 
-.view-holder {
-  top: 50%;
-  margin-top: -150px;
-  height: 300px;
-  position: absolute;
+.filter-control div {
+  display: inline-block;
+  width: 50px;
+  height: 55px;
+  margin-left: 10px;
+  background: fade(red, 40%);
 }
 
-/* trip card styles */
+.filter-control div:first-child {
+  margin-left: 0;
+}
+
+///////////////////// Trip Card /////////////////////
+.trips-holder {
+  margin-top: 60px;
+  padding: 0 10px;  
+}
+
 .card {
   display: inline-block;
   background: fade(darken(@primary-color, 40%), 80%);
 }
+
 .info-trip-card {
   width: 250px;
   height: 300px;
@@ -135,39 +147,112 @@ h4 {
   cursor: pointer;
 }
 
+///////////////////// side-menu-bar /////////////////////
+// .side-menu-bar {
+//   float: left;
+//   width: 15%;
+//   min-width: 200px;
+//   height: 100%;
+//   position: relative;
+// }
 
-.create-trip-card {
-  height: 200px;
-  width: 200px;
-  border-radius: 150px;
-  text-align: center;
-  vertical-align: top;
-  margin-top: 75px;
-  cursor: pointer;
-}
+// .side-menu-bar ul {
+//   width: 100%;
+//   top: 50%;
+//   position: absolute;
+//   margin-top: -100%;
+//   background: fade(black, 40%);
+// }
 
-.create-trip-card h4 {
-  font-size: 14em;
-  margin-top: -85px;
-  border: none;
-}
+// .side-menu-bar ul li {
+//   line-height: @default-font-size * 2;
+//   font-size: @default-font-size * 3;
+//   cursor: pointer;
+//   font-weight: normal;
+//   text-align: center;
+//   color: darken(@primary-color, 20%)
+//   // -webkit-text-stroke-width: 2px; 
+//   // -webkit-text-stroke-color: #6d5e51; 
+//   // -webkit-text-stroke-color: darken(@primary-color, 50%); 
+// }
 
-/* Create Trip stuff */
-.form-step {
-  width: 700px;
-  height: 500px;
-  padding: 10px;
-}
+// .side-menu-bar ul li:hover, .side-menu-bar ul li.active {
+//   background-color: darken(@primary-color,20%);
+//   color: darken(@primary-color, 70%);
+//   opacity: 0.9;
+//   transition: background 300ms ease;
+// }
+
+// .side-menu-bar ul li.not-available {
+//   cursor: not-allowed;
+// }
+
+// h1 {
+//   font-size: @default-font-size * 3;
+//   font-weight: normal;
+// }
+
+// h3 {
+//   font-size: @default-font-size * 2;
+//   font-weight: normal;
+// }
+
+// h4 {
+//   font-size: @default-font-size * 1.1;
+//   font-weight: normal;
+// }
+
+// .content-area {
+//   float: left;
+//   width: 83%; 
+//   min-width: 800px - 21px;
+//   padding: 5px 10px;
+//   height: 100%;
+//   position: relative;
+// }
+
+// .content-area:after {
+//   float: clear;
+// }
 
 // .view-holder {
+//   top: 50%;
+//   margin-top: -150px;
+//   height: 300px;
 //   position: absolute;
-//   padding: 10px 20px;
-//   bottom: 100px;
-//   right: 150px;
-//   height: 450px;
-//   width: 600px;
-//   border: 2px #6d5e51 solid;
-//   background: #8c7f70;
-//   border-radius: 40px;
-//   opacity: .95;
 // }
+// .create-trip-card {
+//   height: 200px;
+//   width: 200px;
+//   border-radius: 150px;
+//   text-align: center;
+//   vertical-align: top;
+//   margin-top: 75px;
+//   cursor: pointer;
+// }
+
+// .create-trip-card h4 {
+//   font-size: 14em;
+//   margin-top: -85px;
+//   border: none;
+// }
+
+// /* Create Trip stuff */
+// .form-step {
+//   width: 700px;
+//   height: 500px;
+//   padding: 10px;
+// }
+
+// // .view-holder {
+// //   position: absolute;
+// //   padding: 10px 20px;
+// //   bottom: 100px;
+// //   right: 150px;
+// //   height: 450px;
+// //   width: 600px;
+// //   border: 2px #6d5e51 solid;
+// //   background: #8c7f70;
+// //   border-radius: 40px;
+// //   opacity: .95;
+// // }
