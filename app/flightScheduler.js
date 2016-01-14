@@ -29,7 +29,7 @@
           abstract: true,
           url: '/trip',
           views: {
-            'main-view': { template: '<ui-view />' }
+            'main-view': { template: '<div class="view-container"><ui-view /></div>' }
           }
         })
         .state('trip.create', {
