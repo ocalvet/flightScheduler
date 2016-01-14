@@ -25,12 +25,22 @@
           },
           controller: 'HomeCtrl as homeCtrl'
         })
-        .state('create-trip', {
-          url: '/create-trip',
+        .state('trip', {
+          abstract: true,
+          url: '/trip',
           views: {
-            'main-view': { templateUrl: 'views/tripCreation/create.html' }
-          },
+            'main-view': { template: '<ui-view />' }
+          }
+        })
+        .state('trip.create', {
+          url: '/create',
+          templateUrl: 'views/trip/create.html',
           controller: 'CreateTripCtrl as createTripCtrl'
+        })
+        .state('trip.signup', {
+          url: '/signup/:tripId',
+          templateUrl: 'views/trip/signup.html',
+          controller: 'SignupTripCtrl as signupTripCtrl'
         });
     });
   

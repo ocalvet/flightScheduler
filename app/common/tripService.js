@@ -6,18 +6,21 @@
         var defer = $q.defer();
         
         defer.resolve([{
+          id: 1,
           title: 'Schilling\'s Trip',
           description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
           days: 12,
           spacesOccupied: 5,
           totalSpaces: 20
       },{
+          id: 2,
           title: 'Tyson\'s Trip',
           description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
           days: 10,
           spacesOccupied: 20,
           totalSpaces: 20
       },{
+          id: 3,
           title: 'Lenny\'s Trip',
           description: 'This trip contains a variety of cultural exchanges to include visit to Havana and Trinidad',
           days: 15,
