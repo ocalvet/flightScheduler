@@ -20,7 +20,7 @@
         .state('home', {
           url: '/home',
           views: {
-            'slogon-view': { template: '<h1>Start Your Dream Celebrity Vacation</h1>' },
+            'slogon-view': { template: '<h1 class="slogon">Start Your Dream Celebrity Vacation</h1>' },
             'main-view': { templateUrl: 'views/home/home.html' }
           },
           controller: 'HomeCtrl as homeCtrl'
