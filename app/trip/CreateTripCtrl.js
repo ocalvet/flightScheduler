@@ -3,7 +3,7 @@
   module('flightScheduler')
     .controller('CreateTripCtrl', ['currentStep', function(currentStep) {
       var createTripCtrl = this;
-      console.log('Current Step: ', currentStep);
+      createTripCtrl.currentStep = currentStep;
       createTripCtrl.title = "Trip Creation";
     }]);
   

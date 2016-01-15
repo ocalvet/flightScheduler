@@ -35,8 +35,25 @@
         .state('trip.create', {
           abstract: true,
           url: '/create',
-          templateUrl: 'views/trip/create.html',
-          controller: 'CreateTripCtrl as createTripCtrl'
+          templateUrl: 'views/trip/create.html'
+        })
+        .state('trip.create.step-1', {
+          url: '/step-1',
+          templateUrl: 'views/trip/step-1.html',
+          resolve: {
+            currentStep: function() { return 1 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
+        .state('trip.create.step-2', {
+          url: '/step-2',
+          templateUrl: 'views/trip/step-2.html',
+          resolve: {
+            currentStep: function() { return 2 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
         })
         .state('trip.signup', {
           url: '/signup/:tripId',
