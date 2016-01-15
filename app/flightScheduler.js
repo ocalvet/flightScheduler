@@ -33,6 +33,7 @@
           }
         })
         .state('trip.create', {
+          abstract: true,
           url: '/create',
           templateUrl: 'views/trip/create.html',
           controller: 'CreateTripCtrl as createTripCtrl'
