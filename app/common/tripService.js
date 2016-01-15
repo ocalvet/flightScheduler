@@ -29,10 +29,31 @@
       }]);
         
         return defer.promise;
+      };
+      
+      var getDestinations = function() {
+        var defer = $q.defer();
+        
+        defer.resolve([{
+          id: 1,
+          name: 'Cuba'
+        }, {
+          id: 2,
+          name: 'Cancun'
+        }, {
+          id: 3,
+          name: 'Costa Rica'
+        }, {
+          id: 4,
+          name: 'Peru'
+        }])
+        
+        return defer.promise;        
       }
       
       return {
-        getUpcomingTrips: getUpcoming
+        getUpcomingTrips: getUpcoming,
+        getDestinations: getDestinations
       }
     }])
 })(angular.module);

@@ -1,1 +1,4 @@
-<h1>Step 1 - {{ createStepCtrl.currentStep }}</h1>
+<h1>Select Destination</h1>
+<div class="destination-card" ng-repeat="destCard in createStepCtrl.destinations" ng-click="createStepCtrl.selectDestination(destCard.id)">
+  <h4>{{ destCard.name }}</h4>
+</div>

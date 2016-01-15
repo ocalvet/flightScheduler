@@ -55,6 +55,51 @@
           controller: 'CreateStepCtrl as createStepCtrl',
           reload: true
         })
+        .state('trip.create.step-3', {
+          url: '/step-3',
+          templateUrl: 'views/trip/step-3.html',
+          resolve: {
+            currentStep: function() { return 3 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
+        .state('trip.create.step-4', {
+          url: '/step-4',
+          templateUrl: 'views/trip/step-4.html',
+          resolve: {
+            currentStep: function() { return 4 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
+        .state('trip.create.step-5', {
+          url: '/step-5',
+          templateUrl: 'views/trip/step-5.html',
+          resolve: {
+            currentStep: function() { return 5 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
+        .state('trip.create.step-6', {
+          url: '/step-6',
+          templateUrl: 'views/trip/step-6.html',
+          resolve: {
+            currentStep: function() { return 6 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
+        .state('trip.create.step-7', {
+          url: '/step-7',
+          templateUrl: 'views/trip/step-7.html',
+          resolve: {
+            currentStep: function() { return 7 }
+          },
+          controller: 'CreateStepCtrl as createStepCtrl',
+          reload: true
+        })
         .state('trip.signup', {
           url: '/signup/:tripId',
           templateUrl: 'views/trip/signup.html',
