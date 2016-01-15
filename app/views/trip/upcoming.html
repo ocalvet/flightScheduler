@@ -1,0 +1,68 @@
+<div class="row main-content-top">
+  <div class="large-6 columns">
+    <h2 class="top-title"><span class="title-icon"><i class="icon-group"></i></span>Member profiles</h2>
+  </div>
+  <div class="large-6 columns">
+    <ul class="breadcrumbs right">
+      <li><a href="index.html">Home</a></li>
+      <li class="current"><a href="#">Member profiles</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row main-content trans-bg">
+  <div class="large-12 columns special-padding">
+    <div class="row member-profiles">
+      <!-- Row -->
+      <div class="large-6 columns member" ng-repeat="card in upcomingTripCtrl.cards">
+        <div class="row">
+          <div class="large-5 columns member-photo">
+            <img src="images/demo/avatars/user-3.png" alt="Member 1" />
+            <ul class="member-social">
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-linkedin"></i></a></li>
+              <li><a href="#"><i class="icon-rss"></i></a></li>
+              <li><a href="#"><i class="icon-pinterest"></i></a></li>
+            </ul>
+          </div>
+          <div class="large-7 columns">
+            <h3>{{ card.title }}</h3>
+            <h5>Something</h5>
+            <p>{{ card.description }}</p>
+            <button ng-click="upcomingTripCtrl.signForTrip(card.id)">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="upcoming-trips-header">
+  <h4>Upcoming Celebrity Trips</h4>
+  <div class="filter-control">
+    <div>Face</div>
+    <div>Days</div>
+    <div>$</div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="trips-holder">
+  <div class="card info-trip-card" ng-repeat="card in upcomingTripCtrl.cards">
+    <h4>{{ card.title }}</h4>
+    <p>{{ card.description }}</p>
+    <table>
+      <tr>
+        <td>Days</td>
+        <td>{{ card.days }}</td>
+      </tr>
+      <tr>
+        <td>Availability</td>
+        <td>{{ card.spacesOccupied }}/{{ card.totalSpaces }}</td>
+      </tr>
+    </table>
+    <div class="trip-card-actions">
+      <button ng-click="upcomingTripCtrl.signForTrip(card.id)">Sign Up</button>
+    </div>
+  </div>
+</div>-->

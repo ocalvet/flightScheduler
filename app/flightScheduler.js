@@ -19,18 +19,13 @@
       $stateProvider
         .state('home', {
           url: '/home',
-          views: {
-            'slogon-view': { template: '<h1 class="slogon">Start Your Dream Celebrity Vacation</h1>' },
-            'main-view': { templateUrl: 'views/home/home.html' }
-          },
+          templateUrl: 'views/home/home.html',
           controller: 'HomeCtrl as homeCtrl'
         })
         .state('trip', {
           abstract: true,
           url: '/trip',
-          views: {
-            'main-view': { template: '<div class="view-container"><ui-view /></div>' }
-          }
+          template: '<div class="view-container"><ui-view /></div>'
         })
         .state('trip.create', {
           abstract: true,
@@ -99,6 +94,11 @@
           },
           controller: 'CreateStepCtrl as createStepCtrl',
           reload: true
+        })
+        .state('trip.upcoming', {
+          url: '/upcoming',
+          templateUrl: 'views/trip/upcoming.html',
+          controller: 'UpcomingTripCtrl as upcomingTripCtrl'
         })
         .state('trip.signup', {
           url: '/signup/:tripId',

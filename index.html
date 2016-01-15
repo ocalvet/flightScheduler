@@ -1,17 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   <title>YOGO! You Only Go Once</title>
- <link href='https://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
- <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+  <!-- Default CSS -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/foundation.css" />
+  <link rel="stylesheet" href="styles/fgx-foundation.css" />
+  <!-- Font Awesome - Retina Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="plugins/vegas-slider/jquery.vegas.css" />
+  <!-- Template css -->
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- Overrides -->
+  <!--<link rel="stylesheet" type="text/css" href="styles/main.css">-->
+
+  <!-- Template libraries -->
+  <script src="plugins/jquery.js"></script>
+
   <!-- Load libraries -->
   <script type="text/javascript" src="lib/angular.js"></script>
   <script type="text/javascript" src="lib/angular-ui-router.js"></script>
 </head>
+
 <body ng-app="flightScheduler" ng-controller="AppCtrl as app">
-  <header>
+  <div class="main-wrapper">
+    <div class="row">
+      <header class="large-3 columns main-navigation">
+        <div class="logo">
+          <a ui-sref="home"><img src="images/logo.png" alt="Jarani" /></a>
+          <hr />
+        </div>
+
+        <nav class="top-bar">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name"></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Main Menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul>
+              <li><a ui-sref="home">Home</a></li>
+              <li><a ui-sref="trip.create.step-1">Create Trip</a></li>
+              <li><a ui-sref="trip.upcoming">Upcoming Trips</a></li>
+              <li><a ui-sref="celebrities">Celebrities</a></li>              
+              <li><a ui-sref="about-us">About Us</a></li>              
+              <li><a ui-sref="contact">Contact</a></li>
+            </ul>
+          </section>
+        </nav>
+
+        <div class="row footer-section">
+          <div class="large-12 columns">
+            <div class="socback">
+              <ul class="social">
+                <li>
+                  <a href="#"><img src="images/fb.png" alt="Facebook" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/tw.png" alt="twitter" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/yt.png" alt="Youtube" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/ket.png" alt="Flickr" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="large-12 columns">
+            <h3 class="tweet-title">Latest tweets</h3>
+            <div id="twitter"></div>
+          </div>
+          <div class="large-12 columns">
+            <p class="copyright">Copyright Jarani 2013, All rights Reserved.</p>
+          </div>
+        </div>
+      </header>
+
+
+      <div class="large-9 columns">
+        <div class="view-holder" ui-view></div> 
+      </div>
+    </div>
+  </div>
+
+  <!--<header>
     <div class="logo">
       <a ui-sref="home">
         <img src="images/logo.png"/>
@@ -31,13 +115,37 @@
   <div class="container">
     <div class="slogon-view" ui-view="slogon-view"></div> 
     <div class="view-holder" ui-view="main-view"></div>   
-  </div>
+  </div>-->
+
+  <!-- Template js -->
+  <script type="text/javascript" src="plugins/vegas-slider/jquery.vegas.js"></script>
+  <script>
+    $( function() {
   
+      $.vegas( 'slideshow', {
+      delay: 8000,
+      backgrounds: [
+        { src: 'images/bg_beach.jpg', fade: 4000 },
+        { src: 'images/habana_vieja_bg.jpg', fade: 4000 }
+      ],
+        preload:     false,
+        walk:        function(){}
+      }
+      )('overlay', {
+        src:'plugins/vegas-slider/overlays/01.png'
+      });
+  });
+
+</script>
+
+
   <!-- Load application files -->
   <script type="text/javascript" src="app/flightScheduler.js"></script>
   <script type="text/javascript" src="app/common/tripService.js"></script>
   <script type="text/javascript" src="app/home/HomeCtrl.js"></script>
   <script type="text/javascript" src="app/trip/CreateStepCtrl.js"></script>
   <script type="text/javascript" src="app/trip/SignupTripCtrl.js"></script>
+  <script type="text/javascript" src="app/trip/UpcomingTripCtrl.js"></script>
 </body>
+
 </html>
