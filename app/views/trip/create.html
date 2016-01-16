@@ -1,9 +1,25 @@
-<h1>{{ createTripCtrl.currentStep }}</h1>
-<a ui-sref='trip.create.step-1'>Step 1</a> | 
-<a ui-sref='trip.create.step-2'>Step 2</a> | 
-<a ui-sref='trip.create.step-3'>Step 3</a> | 
-<a ui-sref='trip.create.step-4'>Step 4</a> | 
-<a ui-sref='trip.create.step-5'>Step 5</a> | 
-<a ui-sref='trip.create.step-6'>Step 6</a> | 
-<a ui-sref='trip.create.step-7'>Step 7</a>
-<ui-view />
+<div class="row main-content-top">
+  <div class="large-6 columns">
+    <h2 class="top-title"><span class="title-icon"><i class="icon-group"></i></span>Creating Trip</h2>
+  </div>
+  <div class="large-6 columns">
+    <ul class="breadcrumbs right">
+      <li><a ui-sref="home">Home</a></li>
+      <li class="current"><a href="#">step-1</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row main-content special-padding">
+  <div class="large-12 columns">
+    <div>
+      <a ui-sref='trip.create.step-1'>Step 1</a> |
+      <a ui-sref='trip.create.step-2'>Step 2</a> |
+      <a ui-sref='trip.create.step-3'>Step 3</a> |
+      <a ui-sref='trip.create.step-4'>Step 4</a> |
+      <a ui-sref='trip.create.step-5'>Step 5</a> |
+      <a ui-sref='trip.create.step-6'>Step 6</a> |
+      <a ui-sref='trip.create.step-7'>Step 7</a>
+    </div>
+    <ui-view />
+  </div>
+</div>
