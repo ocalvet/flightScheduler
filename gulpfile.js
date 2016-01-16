@@ -43,6 +43,7 @@ gulp.task('watch', function() {
 gulp.task('copy-libs', function() {
   gulp.src([
       'node_modules/angular/angular.js',
+      'node_modules/angular-animate/angular-animate.js',
       'node_modules/angular-ui-router/release/angular-ui-router.js'
     ])
     .pipe(gulp.dest('.tmp/lib'));
