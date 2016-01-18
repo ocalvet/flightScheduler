@@ -13,7 +13,7 @@
         });  
         
         upcomingTripCtrl.signForTrip = function(tripId) {
-          $state.go('trip.signup', { tripId: tripId });
+          $state.go('trip.signup.details', { tripId: tripId });
         }         
     }]);
 })(angular.module);
