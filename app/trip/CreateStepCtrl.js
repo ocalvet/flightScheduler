@@ -1,25 +1,30 @@
 (function(module) {
   
   module('flightScheduler')
-    .controller('CreateStepCtrl', ['currentStep', 'tripService', '$state', function(currentStep, tripService, $state) {
-      var createStepCtrl = this;
-      
-      createStepCtrl.currentStep = currentStep;
-      
-      createStepCtrl.title = "Create Step " + currentStep;
-      
-      tripService
-        .getDestinations()
-        .then(function(destinations) {
-          console.log('destinations', destinations);
-          createStepCtrl.destinations = destinations;
-        }, function(error) {
-          console.log(error);
-        });
+    .controller('CreateStepCtrl', ['tripService', '$state', 
+      function(tripService, $state) {
+        var createStepCtrl = this;
         
-      createStepCtrl.selectDestination = function(destId) {
-        $state.go('trip.create.step-2', { destId: destId });
-      }
-    }]);
+        createStepCtrl.tripInfo = {};
+        
+        tripService
+          .getDestinations()
+          .then(function(destinations) {
+            createStepCtrl.destinations = destinations;
+          }, function(error) {
+            console.log(error);
+          });
+          
+        createStepCtrl.selectDestination = function(destination) {
+          if (destination.available) {
+            createStepCtrl.selectedDestination = destination;
+            console.log('destination', destination);
+            createStepCtrl.tripInfo.destination = destination.id;
+            $state.go('trip.create.step-2');
+          }  else {
+            createStepCtrl.selectedDestination = undefined;
+          }
+        }
+      }]);
   
 })(angular.module);
