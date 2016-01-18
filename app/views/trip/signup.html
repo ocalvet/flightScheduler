@@ -1,4 +1,4 @@
-<div class="view-status-bar"></div>
+<!--<div class="view-status-bar"></div>
   <div class="view-content">
     <h1>{{ signupTripCtrl.title }}</h1>
     <form novalidate>
@@ -7,4 +7,84 @@
         <input type="text" ng-model="signupTripCtrl.trip.tripName"/>
       </div>
     </form>
-  </div>
+  </div>-->
+
+<div class="row main-content-top">
+    <div class="row">
+        <div class="large-12 columns">
+            <h2 class="top-title"><span class="title-icon"><i class="icon-group"></i></span>{{signupTripCtrl.title}} {{signupTripCtrl.tripDetails.celebrity}}</h2>
+        </div>
+        <!--<div class="large-6 columns">
+    <ul class="breadcrumbs right">
+      <li><a href="index.html">Home</a></li>
+      <li class="current"><a href="#">Member profiles</a></li>
+    </ul>
+  </div>-->
+    </div>
+</div>
+
+<div class="row main-content">
+    <div class="large-12 columns">
+        <div class="row">
+            <div class="large-3 columns">
+                <div>
+                    <img style="border-radius: 90px" ng-src="images\{{signupTripCtrl.tripDetails.image}}" />
+                </div>
+            </div>
+            <div class="large-9 columns">
+                <p>
+                    <h3>{{ signupTripCtrl.tripDetails.extendedDescription}}</h3>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="large-3 columns">
+<div><h2><i class="icon-briefcase"></i> Cuba</h2></div>
+<div><h2><i class="icon-fighter-jet"></i> 3 Nights</h2></div>
+            </div>
+            <div class="large-9 columns">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2"><h4>Itenerary</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in signupTripCtrl.tripDetails.itinerary">
+                            <td>Day {{item.day}}</td>
+                            <td>{{item.location}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 large-offset-3 columns">
+                <ul class="pricing-table">
+                    <li class="title">Standard</li>
+                    <li class="price">{{signupTripCtrl.tripDetails.standardPrice}}</li>
+                    <li class="description">Basic Package</li>
+                    <li class="bullet-item">Airfare</li>
+                    <li class="bullet-item">Hotel</li>
+                    <li class="bullet-item">1 Dinner</li>
+                    <li class="cta-button"><button class="button" ng-click="signupTripCtrl.signupForm(signupTripCtrl.tripDetails.id,signupTripCtrl.tripDetails.package)">Let's Go</button></li>
+                </ul>
+            </div>
+            <div class="large-3 columns">
+                <ul class="pricing-table">
+                    <li class="title">Premium</li>
+                    <li class="price">{{signupTripCtrl.tripDetails.premiumPrice}}</li>
+                    <li class="description">Premium Package</li>
+                    <li class="bullet-item">Airfare</li>
+                    <li class="bullet-item">Hotel</li>
+                    <li class="bullet-item">2 Dinners</li>
+                    <li class="cta-button"><button class="button" ng-click="signupTripCtrl.signupForm(signupTripCtrl.tripDetails.id,signupTripCtrl.tripDetails.package)">Let's Go</button></li>
+                </ul>
+            </div>
+            <div class="large-3 columns"></div>
+
+        </div>
+    </div>
+
+</div>
