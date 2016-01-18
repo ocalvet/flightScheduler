@@ -60,7 +60,7 @@
         defer.resolve({
             id: 2,
             celebrity: 'Mike Tyson',
-            extendedDescription: 'Join me, Iron Mike Tyson, on an unforgetable trim to Cuba. We\'ll see yadda yadda yadda yadda',
+            extendedDescription: 'Join me, Iron Mike Tyson, on an unforgetable trip to Cuba. We\'ll see yadda yadda yadda yadda',
             destination: 'Cuba',
             days: '10',
             standardPrice: '$3,000',

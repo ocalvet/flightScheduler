@@ -101,9 +101,19 @@
           controller: 'UpcomingTripCtrl as upcomingTripCtrl'
         })
         .state('trip.signup', {
-          url: '/signup/:tripId',
+          abstract: true,
+          url: '/signup',
+          template: '<div class="view-container"><ui-view /></div>'
+        })
+        .state('trip.signup.details', {
+          url: '/details/:tripId',
           templateUrl: 'views/trip/signup.html',
           controller: 'SignupTripCtrl as signupTripCtrl'
+        })
+        .state('trip.signup.form', {
+          url: '/form/:tripId',
+          templateUrl: 'views/trip/signupform.html',
+          controller: 'SignupFormCtrl as signupFormCtrl'
         });
     });
   
