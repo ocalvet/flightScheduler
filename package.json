@@ -18,6 +18,7 @@
     "gulp": "^3.9.0",
     "gulp-connect": "^2.3.1",
     "gulp-less": "^3.0.5",
+    "should": "^8.1.1",
     "vvv": "^1.1.0"
   },
   "dependencies": {
