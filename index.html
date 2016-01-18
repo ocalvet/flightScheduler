@@ -95,29 +95,6 @@
       </div>
     </div>
   </div>
-
-  <!--<header>
-    <div class="logo">
-      <a ui-sref="home">
-        <img src="images/logo.png"/>
-      </a>
-    </div>
-    <nav>
-      <a ui-sref="trip.create.step-1">Create Trip</a>
-      <span class="separator">|</span>
-      <a ui-sref="about-us">About Us</a>
-      <span class="separator">|</span>
-      <a ui-sref="about-us">Trip Tips</a>
-      <span class="separator">|</span>
-      <a ui-sref="about-us">Sign In</a>
-    </nav>
-    <div class="clearfix"></div>
-  </header>
-  <div class="container">
-    <div class="slogon-view" ui-view="slogon-view"></div> 
-    <div class="view-holder" ui-view="main-view"></div>   
-  </div>-->
-
   <!-- Template js -->
   <script type="text/javascript" src="plugins/vegas-slider/jquery.vegas.js"></script>
   <script>
@@ -126,14 +103,13 @@
       $.vegas( 'slideshow', {
       delay: 10000,
       backgrounds: [
-        { src: 'images/background-1.jpg', fade: 5000 },
+        { src: 'images/habana_vieja_bg.jpg', fade: 5000 },
         { src: 'images/background-2.jpg', fade: 5000 },
         { src: 'images/background-3.jpg', fade: 5000 },
         { src: 'images/background-4.jpg', fade: 5000 },
+        { src: 'images/background-1.jpg', fade: 5000 },
         { src: 'images/background-5.jpg', fade: 5000 },
-        { src: 'images/background-6.jpg', fade: 5000 },
-        { src: 'images/background-7.jpg', fade: 5000 },
-        { src: 'images/habana_vieja_bg.jpg', fade: 5000 }
+        { src: 'images/background-7.jpg', fade: 5000 }
       ],
         preload:     false,
         walk:        function(){}
@@ -144,7 +120,6 @@
   });
 
 </script>
-
 
   <!-- Load application files -->
   <script type="text/javascript" src="app/flightScheduler.js"></script>
