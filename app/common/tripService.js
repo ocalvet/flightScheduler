@@ -12,7 +12,7 @@
           days: 12,
           spacesOccupied: 5,
           totalSpaces: 20,
-          image: "MikeTyson.jpg"
+          image: "mike_tyson.jpg"
       },{
           id: 2,
           title: 'Tyson\'s Trip',
@@ -20,7 +20,7 @@
           days: 10,
           spacesOccupied: 20,
           totalSpaces: 20,
-          image: "MikeTyson.jpg"
+          image: "mike_tyson.jpg"
       },{
           id: 3,
           title: 'Lenny\'s Trip',
@@ -28,7 +28,7 @@
           days: 15,
           spacesOccupied: 13,
           totalSpaces: 25,
-          image: "MikeTyson.jpg"
+          image: "mike_tyson.jpg"
       }]);
         
         return defer.promise;
