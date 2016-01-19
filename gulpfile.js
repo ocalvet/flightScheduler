@@ -85,3 +85,4 @@ gulp.task('copy-template-files', function() {
 })
 
 gulp.task('default', ['copy-template-files', 'less', 'tmp', 'app-js', 'copy-libs', 'copy-partials', 'copy-images', 'webserver', 'watch']);
+gulp.task('build', ['copy-template-files', 'less', 'tmp', 'app-js', 'copy-libs', 'copy-partials', 'copy-images']);
