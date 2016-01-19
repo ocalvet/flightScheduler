@@ -1,0 +1,20 @@
+machine:
+  node:
+    version: v5.4.1
+
+dependencies:
+  pre:
+    - npm install -g gulp
+    - npm install -g mocha
+test:
+  override:
+    - npm test
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - rm -rf /var/www/html/*
+      - cp -R $BUILD/* /var/www/html/
+      - chown -R apache:apache /var/www/html/
+      - cd /var/www/html/; npm install; gulp build
