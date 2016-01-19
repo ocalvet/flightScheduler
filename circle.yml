@@ -5,6 +5,10 @@ machine:
 dependencies:
   pre:
     - npm install -g gulp
+    - npm install -g mocha
+test:
+  override:
+    - npm test
 
 deployment:
   production:
