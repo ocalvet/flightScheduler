@@ -14,7 +14,7 @@ deployment:
   production:
     branch: master
     commands:
-      - rm -rf /var/www/html/*
-      - cp -R ~/flightScheduler/* /var/www/html/
-      - chown -R apache:apache /var/www/html/
-      - cd /var/www/html/; npm install; gulp build
+      - ssh root@yogotravel.com "rm -rf /var/www/html/*"
+      - scp ~/flightScheduler/* root@yogotravel.com:/var/www/html/
+      - ssh root@yogotravel.com "chown -R apache:apache /var/www/html/"
+      - ssh root@yogotravel.com  "cd /var/www/html/; npm install; gulp build"
