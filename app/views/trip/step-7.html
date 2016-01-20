@@ -1,2 +1,36 @@
-<h1>Complete / Trip Summary</h1>
-<button ng-click='createStepCtrl.scheduleTrip()'>Schedule Trip</button>
+<h1>Congratulations! The trip to {{ createStepCtrl.selection.destination.name }} was schedule successful</h1>
+<table class="responsive">
+  <tr>
+    <th colspan="2">
+      Trip Details
+    </th>
+  </tr>
+  <tr>
+    <td>Destination</td>
+    <td>{{ createStepCtrl.selection.destination.name }}</td>
+  </tr>
+  <tr>
+    <td>Departing</td>
+    <td>{{ createStepCtrl.selection.flight.starting.date | date: 'short' }}</td>
+  </tr>
+  <tr>
+    <td>Returning</td>
+    <td>{{ createStepCtrl.selection.flight.returning.date | date: 'short' }}</td>
+  </tr>
+  <tr>
+    <td>Itinerary</td>
+    <td>
+      <p ng-repeat="itineraryItem in createStepCtrl.selection.itinerary">
+        {{ itineraryItem.title }}
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>Extras</td>
+    <td>
+      <p ng-repeat="itineraryItem in createStepCtrl.selection.celOptions">
+        {{ itineraryItem.title }}
+      </p>
+    </td>
+  </tr>
+</table>

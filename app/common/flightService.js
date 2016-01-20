@@ -7,6 +7,7 @@
         var defer = $q.defer();
         
         defer.resolve([{
+          id: 1,
           starting: {
             from: 'Miami',
             to: 'Ciudad Habana',
@@ -18,6 +19,7 @@
             date: new Date(2016, 1, 24, 22)
           }
         }, {
+          id: 2,
           starting: {
             from: 'Boca Raton',
             to: 'Ciudad Habana',
@@ -29,6 +31,7 @@
             date: new Date(2016, 1, 24, 20)
           }
         }, {
+          id: 3,
           starting: {
             from: 'Miami',
             to: 'Camaguey',
@@ -40,6 +43,7 @@
             date: new Date(2016, 1, 24, 22)
           }
         }, {
+          id: 4,
           starting: {
             from: 'Boca Raton',
             to: 'Ciudad Habana',

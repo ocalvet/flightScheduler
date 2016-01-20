@@ -1,7 +1,7 @@
 <h1>Choose Flights</h1>
 <div class="row">
   <div class="large-6 columns space-below" ng-repeat="flight in createStepCtrl.flights" ng-click="createStepCtrl.selectFlight(flight)">
-    <div class="flight-card">
+    <div class="flight-card" ng-class="{ 'selected': flight.id === createStepCtrl.selection.flight.id }">
       <h4>Starting Flight <span class="title-icon"><i class="icon-fighter-jet"></i></span></h4>
       <h5><span class="bold">From:</span> {{ flight.starting.from }}</h5>
       <h5><span class="bold">To:</span> {{ flight.starting.to }}</h5>

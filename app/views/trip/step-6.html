@@ -1,2 +1,43 @@
 <h1>Verification</h1>
-<button ng-click='createStepCtrl.finishVerification()'>Verified</button>
+<div class="row">
+  <div class="large-9 columns">
+    <table class="responsive">
+      <tr>
+        <th colspan="2">
+          Trip Details
+        </th>
+      </tr>
+      <tr>
+        <td>Destination</td>
+        <td>{{ createStepCtrl.selection.destination.name }}</td>
+      </tr>
+      <tr>
+        <td>Departing</td>
+        <td>{{ createStepCtrl.selection.flight.starting.date | date: 'short' }}</td>
+      </tr>
+      <tr>
+        <td>Returning</td>
+        <td>{{ createStepCtrl.selection.flight.returning.date | date: 'short' }}</td>
+      </tr>
+      <tr>
+        <td>Itinerary</td>
+        <td>
+          <p ng-repeat="itineraryItem in createStepCtrl.selection.itinerary">
+            {{ itineraryItem.title }}
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>Extras</td>
+        <td>
+          <p ng-repeat="itineraryItem in createStepCtrl.selection.celOptions">
+            {{ itineraryItem.title }}
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="large-3 columns approval-btn-container">
+    <button class="approval-btn" ng-click='createStepCtrl.finishVerification()'>Done</button>
+  </div>
+</div>

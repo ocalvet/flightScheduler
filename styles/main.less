@@ -63,6 +63,10 @@ body {
   background: fade(@primary-color, 20%);
 }
 
+.flight-card:hover, .flight-card.selected {
+  background: fade(@primary-color, 35%);
+}
+
 .flight-card hr {
   margin: 10px 5px;
   border: solid @primary-color 2px;
@@ -130,10 +134,10 @@ body {
 }
 
 .approval-btn {
-  margin: 20px auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+  margin: 0px auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
   font-size: @default-font-size * 1.6;
   text-align: center;
 }

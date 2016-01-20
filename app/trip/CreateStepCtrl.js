@@ -1,8 +1,8 @@
 (function(module) {
   
   module('flightScheduler')
-    .controller('CreateStepCtrl', ['tripService', '$state', 'flightService', 
-      function(tripService, $state, flightService) {
+    .controller('CreateStepCtrl', ['$filter', 'tripService', '$state', 'flightService', 
+      function($filter, tripService, $state, flightService) {
         var createStepCtrl = this;
         
         createStepCtrl.selection = {};
@@ -37,12 +37,12 @@
         };
         
         createStepCtrl.submitItinerary = function(itinerary) {
-          createStepCtrl.selection.itinerary = itinerary;
+          createStepCtrl.selection.itinerary = $filter('filter')(itinerary,  { selected: 'yes' });
           $state.go('trip.create.step-4');
         };
         
         createStepCtrl.submitCelebrityOptions = function(celOptions) {
-           createStepCtrl.selection.celOptions = celOptions;
+           createStepCtrl.selection.celOptions = $filter('filter')(celOptions,  { selected: 'yes' });
           $state.go('trip.create.step-5');
         };
         
@@ -53,10 +53,6 @@
         
         createStepCtrl.finishVerification = function() {
           $state.go('trip.create.step-7');
-        };
-        
-        createStepCtrl.scheduleTrip = function() {
-          $state.go('trip.upcoming');
         };
       }]);
   
