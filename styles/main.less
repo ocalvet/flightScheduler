@@ -6,26 +6,80 @@ body {
 }
 
 /* enter animation */
-.create-steps.ng-enter, 
-.create-steps.ng-leave {
-    position:absolute; left:30px; right:30px; 
-    background: white;
-    animation:slideInRight 0.5s both ease; 
+// .create-steps.ng-enter, 
+// .create-steps.ng-leave {
+//     position:absolute; left:30px; right:30px; 
+//     background: white;
+//     animation:slideInRight 0.5s both ease; 
+// }
+
+// .create-steps.ng-enter {
+//   animation:slideInRight 0.5s both ease; 
+// }
+// /* slide in from the right */
+// @keyframes slideInRight {
+//     from    { transform: translateX(200%); }
+//     to      { transform: translateX(0); }
+// }
+.space-below {
+  margin-bottom: 15px;
 }
 
-.create-steps.ng-enter {
-  animation:slideInRight 0.5s both ease; 
+.bold {
+  font-weight: bold;
 }
-/* slide in from the right */
-@keyframes slideInRight {
-    from    { transform: translateX(200%); }
-    to      { transform: translateX(0); }
+
+.switch-container {
+  position: relative;
+  
+}
+
+.step-header {
+  width: 350px;
+  margin: 0 auto;
+}
+.step-header a {
+  display: inline-block;
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 100px;
+  border: solid 1px @primary-color;
+}
+
+.step-header a.active {
+  background: fade(@primary-color, 40%);
+  border: solid 2px @primary-color;
+}
+
+.switch-container span.title {
+  position: absolute;
+  left: 65px;
+  top: 10px;
+}
+
+.flight-card {
+  border: 2px solid white;
+  padding: 1.2em;
+  background: fade(@primary-color, 20%);
+}
+
+.flight-card hr {
+  margin: 10px 5px;
+  border: solid @primary-color 2px;
 }
 
 .destination-card {
   height: auto;
   position: relative;
   cursor: pointer;
+}
+
+.destination-card img {
+  border: 4px solid white;
+}
+
+.card-selected {
+  border: 4px solid @primary-color;
 }
 
 .destination-card .card-back {
@@ -69,6 +123,19 @@ body {
 .destination-card.not-available {
   opacity: 0.5; 
   cursor: not-allowed;
+}
+
+.approval-btn-container {
+  text-align: center;
+}
+
+.approval-btn {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  font-size: @default-font-size * 1.6;
+  text-align: center;
 }
 
 // ///////////////////// Common /////////////////////

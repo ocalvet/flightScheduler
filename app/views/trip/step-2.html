@@ -1,1 +1,16 @@
-<h1>Choose Dates</h1>
+<h1>Choose Flights</h1>
+<div class="row">
+  <div class="large-6 columns space-below" ng-repeat="flight in createStepCtrl.flights" ng-click="createStepCtrl.selectFlight(flight)">
+    <div class="flight-card">
+      <h4>Starting Flight <span class="title-icon"><i class="icon-fighter-jet"></i></span></h4>
+      <h5><span class="bold">From:</span> {{ flight.starting.from }}</h5>
+      <h5><span class="bold">To:</span> {{ flight.starting.to }}</h5>
+      <h5><span class="bold">Date:</span> {{ flight.starting.date | date: 'short'}}</h5>
+      <hr />
+      <h4>Returning Flight <span class="title-icon"><i class="icon-fighter-jet"></i></span></h4>
+      <h5><span class="bold">From:</span> {{ flight.returning.from }}</h5>
+      <h5><span class="bold">To:</span> {{ flight.returning.to }}</h5>
+      <h5><span class="bold">Date:</span> {{ flight.returning.date | date: 'short'}}</h5>
+    </div>
+  </div>
+</div>

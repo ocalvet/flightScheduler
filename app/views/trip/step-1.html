@@ -1,6 +1,9 @@
 <h1>Select Destination</h1>
 <div class="row">
-  <div class="large-6 columns destination-card" ng-class="{ 'not-available': !destCard.available }" ng-repeat="destCard in createStepCtrl.destinations" ng-click="createStepCtrl.selectDestination(destCard)">
+  <div class="large-6 columns destination-card space-below" 
+       ng-class="{ 'not-available': !destCard.available }" 
+       ng-repeat="destCard in createStepCtrl.destinations" 
+       ng-click="createStepCtrl.selectDestination(destCard)">
     <div class="card-front">
     <img ng-src="{{ destCard.image }}" />
     <h4 class="title">{{ destCard.name }}</h4>

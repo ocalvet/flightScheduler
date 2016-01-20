@@ -1,14 +1,14 @@
 <h1>Proposed Itinerary</h1>
-<div ng-repeat="itineraryOption in createStepCtrl.selectedDestination.itineraryOptions">
+<div class="switch-container" ng-repeat="itineraryOption in createStepCtrl.selection.destination.itineraryOptions">
   <div class="switch" style="width: 60px;">
-    <input id="x" name="switch-x" type="radio" checked>
-    <label for="x" onclick="">No</label>
+    <input name="switch-{{itineraryOption.id}}" type="radio" ng-model="itineraryOption.selected" value="no">
+    <label>No</label>
 
-    <input id="x1" name="switch-x" type="radio">
-    <label for="x1" onclick="">Yes</label>
+    <input name="switch-{{itineraryOption.id}}" type="radio" ng-model="itineraryOption.selected" value="yes">
+    <label>Yes</label>
     <span></span>
+  </div>
+  <span class="title">{{ itineraryOption.title }}</span>
 </div>
 
-  
-  {{ itineraryOption.title }}
-</div>
+<button ng-click='createStepCtrl.submitItinerary(createStepCtrl.selection.destination.itineraryOptions)'>Submit Itinerary</button>

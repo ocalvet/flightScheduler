@@ -1,1 +1,13 @@
 <h1>Celebrity Options</h1>
+<div class="switch-container" ng-repeat="itineraryOption in createStepCtrl.selection.destination.celebrityOptions">
+  <div class="switch" style="width: 60px;">
+    <input name="switch-{{itineraryOption.id}}" type="radio" ng-model="itineraryOption.selected" value="no">
+    <label>No</label>
+
+    <input name="switch-{{itineraryOption.id}}" type="radio" ng-model="itineraryOption.selected" value="yes">
+    <label>Yes</label>
+    <span></span>
+  </div>
+  <span class="title">{{ itineraryOption.title }}</span>
+</div>
+<button ng-click='createStepCtrl.submitCelebrityOptions(createStepCtrl.selection.destination.celebrityOptions)'>Submit Extras</button>
