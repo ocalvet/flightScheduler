@@ -12,7 +12,7 @@
           days: 12,
           spacesOccupied: 5,
           totalSpaces: 20,
-          image: "mike_tyson.jpg"
+          image: "curt_schilling.jpg"
       },{
           id: 2,
           title: 'Tyson\'s Trip',
@@ -28,7 +28,7 @@
           days: 15,
           spacesOccupied: 13,
           totalSpaces: 25,
-          image: "mike_tyson.jpg"
+          image: "lenny_dykstra.jpg"
       }]);
         
         return defer.promise;
@@ -72,7 +72,7 @@
             { id:1, title: 'Personal diner', selected: 'no' },
             { id:2, title: 'Plane seat next to celebrity reservation', selected: 'no' },
             { id:3, title: 'Ride on bus', selected: 'no' },
-            { id:4, title: 'Watch beisball game', selected: 'no' },
+            { id:4, title: 'Watch beseball game', selected: 'no' },
             { id:5, title: 'Night Club VIP with celebrity', selected: 'no' }
           ]
         }, {
@@ -101,6 +101,8 @@
        var getTripDetails = function(tripId) {
            var defer = $q.defer();
         
+        var images = ["curt_schilling.jpg","mike_tyson.jpg", "lenny_dykstra.jpg"]
+        
         defer.resolve({
             id: 2,
             celebrity: 'Mike Tyson',
@@ -109,7 +111,7 @@
             days: '10',
             standardPrice: '$3,000',
             premiumPrice: '$5,000',
-            image: "MikeTyson.jpg",
+            image: images[tripId - 1],
             itinerary: [{day: 1, location: 'Walking tour of old Havana' }, {day: 2, location: 'Baseball game at the famous XX stadium in Santiago de Cuba'}, {day: 3, location: 'Boxing match at the old XX in Holguín'}]
         });
         return defer.promise;
