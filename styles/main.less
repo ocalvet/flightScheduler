@@ -64,7 +64,16 @@ body {
 }
 
 .flight-card:hover, .flight-card.selected {
-  background: fade(@primary-color, 35%);
+  background: @secondary-color;
+  cursor: pointer;
+}
+
+.flight-card:hover h5, .flight-card:hover h4, .flight-card.selected h5, .flight-card.selected h4  {
+  color: #000000;  
+}
+
+.flight-card:hover hr, .flight-card.selected hr {
+  border-color: #000000;
 }
 
 .flight-card hr {

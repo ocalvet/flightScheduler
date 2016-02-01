@@ -27,6 +27,12 @@
           url: '/trip',
           template: '<div class="view-container"><ui-view /></div>'
         })
+        .state('trip.create1', {
+          // abstract: true,
+          url: '/create1',
+          templateUrl: 'views/trip/create1.html',
+          controller: 'CreateStepCtrl1 as createStepCtrl',
+        })
         .state('trip.create', {
           // abstract: true,
           url: '/create',
