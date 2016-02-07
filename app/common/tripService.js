@@ -1,5 +1,5 @@
 (function(module) {
-  module('flightScheduler')
+  module('common')
     .service('tripService', ['$q', function($q) {
       
       var getUpcoming = function() {

@@ -1,6 +1,6 @@
 (function(module) {
   
-  module('flightScheduler')
+  module('common')
     .service('flightService', ['$q', function($q) {
       
       var getUpcomingFlights = function(destinationId) {

@@ -1,6 +1,6 @@
 (function(module) {
   
-  module('flightScheduler', ['ngAnimate','ui.router'])
+  module('flightScheduler', ['ngAnimate','ui.router', 'common'])
     .controller('AppCtrl', ['$state', function($state) {
       var appCtrl = this;
       

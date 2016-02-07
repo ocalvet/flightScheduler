@@ -21,7 +21,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('tmp', function() {
-  gulp.src('index.html')
+  gulp.src(['index.html', 'dashboard.html'])
     .pipe(gulp.dest('.tmp'))
     .pipe(connect.reload());
 });
@@ -34,7 +34,7 @@ gulp.task('app-js', function() {
 
 gulp.task('watch', function() {
     gulp.watch('styles/*.less', ['less']);
-    gulp.watch('index.html', ['tmp']);
+    gulp.watch(['*.html'], ['tmp']);
     gulp.watch(['app/*.js', 'app/**/*.js'], ['app-js']);
     gulp.watch('app/views/**/*', ['copy-partials']);
     gulp.watch('images/*', ['copy-images']);
