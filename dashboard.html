@@ -5,8 +5,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body ng-app="yogoTravelDashboard" ng-cloak ng-controller="DashboardAppCtrl as da">
-  
-  <md-content>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings">
@@ -25,25 +23,25 @@
       </div>
     </md-toolbar>
     <div layout="row">
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-      <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">User Menu</h1>
-      </md-toolbar>
-      <md-content layout-padding >
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-          Close Sidenav Left
-        </md-button>
-        <p hide-md show-gt-md>
-          This sidenav is locked open on your device. To go back to the default behavior,
-          narrow your display.
-        </p>
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
+        <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">User Menu</h1>
+        </md-toolbar>
+        <md-content layout-padding >
+          <md-button ng-click="close()" class="md-primary" hide-gt-md>
+            Close Sidenav Left
+          </md-button>
+          <p hide-md show-gt-md>
+            This sidenav is locked open on your device. To go back to the default behavior,
+            narrow your display.
+          </p>
+        <span flex></span>
+        </md-content>
+      </md-sidenav>
+      <md-content layout-padding layout-fill>
+          <yt-create-trip></yt-create-trip>
       </md-content>
-    </md-sidenav>
-    <md-content>
-        Content
-    </md-content>
     </div>
-  </md-content>
   
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
@@ -57,6 +55,7 @@
   <!-- Dashboard files -->
   <script src="app/dashboard/yogoTravelDashboard.js"></script>
   <script src="app/dashboard/DashboardAppCtrl.js"></script>
+  <script src="app/dashboard/ytCreateTrip.js"></script>
   
 </body>
 </html>

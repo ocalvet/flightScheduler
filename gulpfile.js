@@ -36,7 +36,10 @@ gulp.task('watch', function() {
     gulp.watch('styles/*.less', ['less']);
     gulp.watch(['*.html'], ['tmp']);
     gulp.watch(['app/*.js', 'app/**/*.js'], ['app-js']);
-    gulp.watch('app/views/**/*', ['copy-partials']);
+    gulp.watch([
+      'app/homeApp/views/**/*',
+      'app/dashboard/views/**/*'
+    ], ['copy-partials']);
     gulp.watch('images/*', ['copy-images']);
 });
 
@@ -51,7 +54,8 @@ gulp.task('copy-libs', function() {
 
 gulp.task('copy-partials', function() {
   gulp.src([
-      'app/views/**/*'
+      'app/homeApp/views/**/*',
+      'app/dashboard/views/**/*'
     ])
     .pipe(gulp.dest('.tmp/views'))
     .pipe(connect.reload());
