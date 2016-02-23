@@ -7,24 +7,25 @@
     </div>
   </md-toolbar>
   <md-content layout-padding>
-    <!-- Draggable element. -->
-    <div ng-repeat="item in da.availableOptions"
-      draggable="true" 
-      effect-allowed="copy" 
-      draggable-type="custom-object" 
-      draggable-data="item">
-        {{ item.title }}
-    </div>
     <!-- Dropzone element. -->
     <div  class="drop-zone" 
-      drop="da.onDrop($data, $event)" 
+      drop="ct.onDrop($data, $event)" 
       drop-effect="copy" 
       drop-accept="'json/custom-object'" 
-      drag-over="da.onDragOver($event)"
+      drag-over="ct.onDragOver($event)"
       drag-over-class="drag-over-accept">
-      <div ng-repeat="item in da.selectedOptions">
+      <div ng-repeat="item in ct.selectedOptions">
         {{ item.title }}
       </div>
+    </div>
+    <!-- Draggable element. -->
+    <div 
+        ng-repeat="item in ct.availableOptions"
+        draggable="true" 
+        effect-allowed="copy" 
+        draggable-type="custom-object" 
+        draggable-data="item">
+          {{ item.title }}
     </div>
   </md-content>
   <div style="border-top: #c1c1c1 solid 1px;" layout-padding>
