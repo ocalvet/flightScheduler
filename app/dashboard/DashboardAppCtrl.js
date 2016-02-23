@@ -1,7 +1,7 @@
 (function(module) {
 
     module('yogoTravelDashboard')
-        .controller('DashboardAppCtrl', ['lodash', function(lodash){
+        .controller('DashboardAppCtrl', ['lodash', 'securityService', function(lodash, securityService){
 
             var da = this;
 
@@ -36,7 +36,13 @@
             da.onDragOver = function (event) {
               // ...
             };
-
+            
+            securityService.getCurrentUser()
+                .then(function(user) {
+                   da.user = user; 
+                }, function(error) {
+                    console.log("there is an error retrieving user");
+                });
         }]);
 
 })(angular.module)

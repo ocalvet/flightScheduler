@@ -1,8 +1,15 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var less = require('gulp-less');
+var concat = require('gulp-concat');
 
- // Setup a webserver
+gulp.task('concat-scripts', function() {
+  return gulp.src(['./app/common/common.js', './app/','./lib/*.js'])
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./dist/'));
+});
+ 
+// Setup a webserver
 gulp.task('webserver', function() {
   var serverPort = process.env.FS_PORT || 8088;
   connect.server({

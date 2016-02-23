@@ -14,6 +14,7 @@
           <span>Yogo! Travel Dashboard</span>
         </h2>
         <span flex></span>
+        <span>Welcome {{ da.user.name }}!</span>
         <md-button class="md-icon-button" aria-label="Favorite">
           <md-icon style="color: greenyellow;">favorite</md-icon>
         </md-button>
@@ -32,14 +33,14 @@
             Close Sidenav Left
           </md-button>
           <p hide-md show-gt-md>
-            This sidenav is locked open on your device. To go back to the default behavior,
+            This sidenav is open on your device. To go back to the default behavior,
             narrow your display.
           </p>
         <span flex></span>
         </md-content>
       </md-sidenav>
       <md-content layout-padding layout-fill>
-          <yt-create-trip></yt-create-trip>
+          <yt-create-trip user="da.user"></yt-create-trip>
       </md-content>
     </div>
   
@@ -57,10 +58,15 @@
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.js"></script>
   
+  <!-- Common files -->
+  <script src="app/common/common.js"></script>
+  <script src="app/common/securityService.js"></script>
+  
   <!-- Dashboard files -->
   <script src="app/dashboard/yogoTravelDashboard.js"></script>
   <script src="app/dashboard/DashboardAppCtrl.js"></script>
   <script src="app/dashboard/ytCreateTrip.js"></script>
+  <script src="app/dashboard/ytCreateTripOptionsList.js"></script>
   
 </body>
 </html>
