@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
- var less = require('gulp-less');
- 
+var less = require('gulp-less');
+
  // Setup a webserver
 gulp.task('webserver', function() {
   var serverPort = process.env.FS_PORT || 8088;
@@ -25,7 +25,7 @@ gulp.task('tmp', function() {
     .pipe(gulp.dest('.tmp'))
     .pipe(connect.reload());
 });
- 
+
 gulp.task('app-js', function() {
   gulp.src('app/**/*.js')
     .pipe(gulp.dest('.tmp/app'))
@@ -47,6 +47,8 @@ gulp.task('copy-libs', function() {
   gulp.src([
       'node_modules/angular/angular.js',
       'node_modules/angular-animate/angular-animate.js',
+      'node_modules/angular-draganddrop/angular-draganddrop.js',
+      'node_modules/ng-lodash/build/ng-lodash.js',
       'node_modules/angular-ui-router/release/angular-ui-router.js'
     ])
     .pipe(gulp.dest('.tmp/lib'));
@@ -60,7 +62,7 @@ gulp.task('copy-partials', function() {
     .pipe(gulp.dest('.tmp/views'))
     .pipe(connect.reload());
 });
- 
+
 gulp.task('copy-images', function() {
   gulp.src([
       'images/*'
@@ -74,13 +76,13 @@ gulp.task('copy-template-files', function() {
       'template/css/*'
     ])
     .pipe(gulp.dest('.tmp/styles'));
-    
+
     // IMAGES
    gulp.src([
       'template/images/*'
     ])
     .pipe(gulp.dest('.tmp/images'));
-    
+
     // PLUGINS
    gulp.src([
       'template/plugins/**/*'

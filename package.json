@@ -24,6 +24,8 @@
   "dependencies": {
     "angular": "^1.4.8",
     "angular-animate": "^1.4.8",
-    "angular-ui-router": "^1.0.0-alpha0"
+    "angular-draganddrop": "^0.2.2",
+    "angular-ui-router": "^1.0.0-alpha0",
+    "ng-lodash": "^0.2.3"
   }
 }
