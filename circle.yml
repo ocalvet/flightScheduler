@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - npm install -g gulp
+    - npm install -g bower 
     - npm install -g mocha
 test:
   override:
