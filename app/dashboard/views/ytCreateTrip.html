@@ -18,14 +18,19 @@
         {{ item.title }}
       </div>
     </div>
+    <div layout="row">
     <!-- Draggable element. -->
-    <div 
+    <md-card flex-xs flex-gt-xs="50"
         ng-repeat="item in ct.availableOptions"
         draggable="true" 
         effect-allowed="copy" 
         draggable-type="custom-object" 
         draggable-data="item">
-          {{ item.title }}
-    </div>
+        <md-title>
+          <md-title-text>{{ item.title }}</md-title-text>
+        </md-title>
+        <md-content> Fake </md-content>
+      </md-card>
+      </div>
   </md-content>
  </div>
