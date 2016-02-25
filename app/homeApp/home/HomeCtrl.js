@@ -7,13 +7,13 @@
 
       tripService.getUpcomingTrips()
         .then(function(trips) {
-          homeCtrl.cards = trips;          
+          homeCtrl.cards = trips;
         }, function (err) {
           console.log('There was an error getting the upcoming trips', err);
-        });  
-        
+        });
+
         homeCtrl.signForTrip = function(tripId) {
           $state.go('trip.signup', { tripId: tripId });
-        }         
+        }
     }]);
 })(angular.module);

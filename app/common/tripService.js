@@ -1,10 +1,10 @@
 (function(module) {
   module('common')
     .service('tripService', ['$q', function($q) {
-      
+
       var getUpcoming = function() {
         var defer = $q.defer();
-        
+
         defer.resolve([{
           id: 1,
           title: 'Schilling\'s Trip',
@@ -30,13 +30,13 @@
           totalSpaces: 25,
           image: "lenny_dykstra.jpg"
       }]);
-        
+
         return defer.promise;
       };
-      
+
       var getDestinations = function() {
         var defer = $q.defer();
-        
+
         defer.resolve([{
           id: 1,
           name: 'Cuba',
@@ -94,15 +94,15 @@
           available: false,
           description: 'Peru is a country in South America that\'s home to a section of Amazon rainforest and Machu Picchu, an ancient Incan city set high in the Andes mountains. The area surrounding Machu Picchu, including the Sacred Valley, the Inca Trail and the lively city of Cusco, is also rich in Incan sites as well as hiking, rafting and mountain-biking opportunities.'
         }])
-        
-        return defer.promise;        
+
+        return defer.promise;
       }
-      
+
        var getTripDetails = function(tripId) {
            var defer = $q.defer();
-        
+
         var images = ["curt_schilling.jpg","mike_tyson.jpg", "lenny_dykstra.jpg"]
-        
+
         defer.resolve({
             id: 2,
             celebrity: 'Mike Tyson',
@@ -116,8 +116,8 @@
         });
         return defer.promise;
       }
-      
-      
+
+
       return {
         getUpcomingTrips: getUpcoming,
         getDestinations: getDestinations,

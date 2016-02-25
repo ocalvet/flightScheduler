@@ -1,9 +1,9 @@
 (function(module) {
-  
+
   module('flightScheduler', ['ngAnimate','ui.router', 'common'])
     .controller('AppCtrl', ['$state', function($state) {
       var appCtrl = this;
-      
+
       // navigate to the different states
       appCtrl.navigate = function(state) {
         console.log('Navigating to ' + state);
@@ -11,10 +11,10 @@
       }
     }])
     .config(function($stateProvider, $urlRouterProvider) {
-      
+
       // For any unmatched url, redirect to /state1
       $urlRouterProvider.otherwise("/home");
-      
+
       // Set up the application states
       $stateProvider
         .state('home', {
@@ -123,5 +123,5 @@
           controller: 'SignupFormCtrl as signupFormCtrl'
         });
     });
-  
+
 })(angular.module);

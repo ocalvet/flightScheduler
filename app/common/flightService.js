@@ -1,11 +1,11 @@
 (function(module) {
-  
+
   module('common')
     .service('flightService', ['$q', function($q) {
-      
+
       var getUpcomingFlights = function(destinationId) {
         var defer = $q.defer();
-        
+
         defer.resolve([{
           id: 1,
           starting: {
@@ -55,13 +55,13 @@
             date: new Date(2016, 2, 9, 21)
           }
         },]);
-        
+
         return defer.promise;
       };
-      
+
       return {
         getUpcomingFlights: getUpcomingFlights
       }
     }])
-  
+
 })(angular.module)
