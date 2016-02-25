@@ -11,7 +11,7 @@
               { id: 3, title: 'option 3' },
               { id: 4, title: 'option 4' }
             ];
-            
+
             ct.selectedOptions  = [];
 
             ct.title = "Yogo! Create Trip";
@@ -24,7 +24,7 @@
                 if (lodash.findIndex(ct.selectedOptions, function(option){
                     return option.id === customObjectData.id;
                 }) === -1) {
-                    
+
                     // Get other attached data.
                     var uriList = data['text/uri-list']; // http://mywebsite.com/..
 
